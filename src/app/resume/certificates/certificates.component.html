@@ -1,0 +1,52 @@
+<section class="certificate section" id="certificates">
+  <h2 class="section-title">Certificates</h2>
+  <div class="certificate__container bd-grid">
+    <div class="certificate__content">
+      <a
+        class="certificate__link"
+        (click)="onClickCertificate('Cert-html-css.jpg')"
+      >
+        <i class="bx bxl-html5 certificate__icon"></i>HTML
+      </a>
+    </div>
+    <div class="certificate__content">
+      <a
+        class="certificate__link"
+        (click)="onClickCertificate('Cert-html-css.jpg')"
+      >
+        <i class="bx bxl-css3 certificate__icon"></i>CSS
+      </a>
+    </div>
+    <div class="certificate__content">
+      <a class="certificate__link" (click)="onClickCertificate('JS-cert.png')">
+        <i class="bx bxl-javascript certificate__icon"></i>Javascript
+      </a>
+    </div>
+    <div class="certificate__content">
+      <a class="certificate__link" (click)="onClickCertificate('cert-RJS.jpg')">
+        <i class="bx bxl-react certificate__icon"></i>React
+      </a>
+    </div>
+    <div class="certificate__content">
+      <a class="certificate__link">
+        <i class="bx bxl-angular certificate__icon"></i>Angular
+      </a>
+      <div class="dropdown-content">
+        <a class="dropdown__option" (click)="onClickCertificate('Cert-NG.jpg')"
+          >OpenBootCamp</a
+        >
+        <a
+          class="dropdown__option"
+          (click)="onClickCertificate('Cert-NG_Udemy.jpg')"
+          >Udemy</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<div *ngIf="showCertificate">
+  <app-certificate-modal
+    [certificateToShow]="certificateToShow"
+    (closeModalEvent)="closeCertificateModal()"
+  ></app-certificate-modal>
+</div>
