@@ -3,22 +3,14 @@
     <div class="home__data bd-grid">
       <img src="../../assets/IMG2.jpg" alt="ProfilePic" class="home__img" />
       <h1 class="home__title">
-        {{ name }} <b>{{ LastName }}</b>
+        <b>{{ name }} {{ LastName }}</b>
       </h1>
       <h3 class="home__profession">{{ profession }}</h3>
-      <div>
-        <a
-          download=""
-          href="../../assets/Profile (2).pdf"
-          class="home__button-movil"
-          >Download</a
-        >
-      </div>
     </div>
     <div class="home__address bd-grid">
-      <span class="home__information">
+      <!-- <span class="home__information">
         <i class="bx bx-map home__icon"></i> {{ address }}
-      </span>
+      </span> -->
       <span class="home__information">
         <i class="bx bx-envelope home__icon"></i> {{ email }}
       </span>

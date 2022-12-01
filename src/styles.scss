@@ -125,19 +125,18 @@ img {
   align-items: center;
 }
 
-@media screen and (max-width: 968px) {
-  .nav__menu {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    padding: 2rem 1.5rem;
-    background-color: var(--body-color);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 1rem 1rem 0 0;
-    z-index: var(--z-fixed);
-    transition: 0.3s;
-  }
+.nav__menu {
+  position: fixed;
+  bottom: 6%;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background-color: var(--body-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem 1rem 0 0;
+  z-index: var(--z-fixed);
+  transition: 0.3s;
+  display: none;
 }
 
 .nav__logo,
@@ -179,7 +178,7 @@ img {
 }
 
 .show-menu {
-  bottom: var(--header-height);
+  display: block;
 }
 
 /*HOME*/
@@ -317,7 +316,7 @@ img {
 }
 
 .education__year {
-  font-size: var(--smaller-font-size);
+  font-size: var(--small-font-size);
 }
 
 /*SKILLS*/
@@ -386,7 +385,7 @@ img {
 /*CERTIFICATES*/
 
 .certificate__container {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
   vertical-align: middle;
 }
@@ -465,6 +464,30 @@ img {
   }
 }
 
+@media screen and (min-width: 320px) {
+  .certificate__container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem, 0.5rem;
+  }
+
+  .certificate__content {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .certificate__container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem, 0.5rem;
+  }
+
+  .certificate__content {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
 @media screen and (min-width: 968px) {
   body {
     margin: 3rem 0;
@@ -506,6 +529,43 @@ img {
   .home__button-movil {
     display: none;
   }
+
+  .certificate__container {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem, 0.5rem;
+  }
+
+  .certificate__content {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .projects__container {
+    width: 42rem;
+    height: 20rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--text-color-light);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+  }
+
+  ::-webkit-scrollbar-track-piece {
+    background: var(--container-color);
+  }
 }
 
 /*MODAL*/
@@ -520,7 +580,7 @@ img {
   width: 100%;
   height: 100%;
   margin: var(--mb-3);
-  z-index: 101;
+  z-index: var(--z-tooltip);
 }
 
 .img__container {
@@ -542,4 +602,21 @@ img {
 
 .dropdown__option :hover {
   cursor: pointer;
+}
+
+/*PROJECTS*/
+
+.projects__container {
+  overflow-y: auto;
+}
+
+.projects__content {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+.projects__name {
+  text-decoration: underline;
 }

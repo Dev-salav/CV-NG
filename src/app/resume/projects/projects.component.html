@@ -1,7 +1,13 @@
 <section class="projects section" id="projects">
-  <h2 class="section-title">Projects</h2>
+  <h2 class="section-title">Personal Projects</h2>
   <div class="projects__container bd-grid">
-    <h3 class="projects__name">Pig Game:</h3>
-    <a href="#" target="_blank" class="project__link">Link to project</a>
+    <div class="projects__content" *ngFor="let project of projects">
+      <h3 class="projects__name">{{ project.title }}</h3>
+      <p class="project__description">{{ project.description }}</p>
+      <p>Framework: {{ project.framework }}</p>
+      <a href="{{ project.githubUrl }}" target="_blank" class="project__link"
+        >Click here to see the repository in Github!
+      </a>
+    </div>
   </div>
 </section>
